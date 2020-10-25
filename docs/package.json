@@ -1,0 +1,19 @@
+{
+  "name": "g7_iot_documentation",
+  "version": "0.0.1",
+  "description": "Documentation for our RFID and Tablevision IoT Solution for Beo Crescent",
+  "main": "index.js",
+  "authors": {
+    "name": "Team Hardcode",
+    "email": "emmanuelr.2018@sis.smu.edu.sg"
+  },
+  "repository": "https://github.com/smu-iot20-g7/documentation/CS462: G7 IoT Documentation",
+  "scripts": {
+    "dev": "vuepress dev src",
+    "build": "vuepress build src"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "vuepress": "^1.5.3"
+  }
+}
