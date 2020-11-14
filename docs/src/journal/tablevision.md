@@ -55,7 +55,7 @@ Below is a GIF on how we train our model
 
 0 -> 2 -> 1 -> 0
 
-**State 0: Empty Table on the left**
+**State 0: Empty Table on the right**
 ![state_0](../assets/s21.jpg)
 
 **State 2: Table Occupied**
