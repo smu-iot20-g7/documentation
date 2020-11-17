@@ -1,11 +1,11 @@
 # Tablevision: AI-Powered Tray Return Monitoring
 
-## Achitecture Diagram
+## Architecture Diagram
 ![diagram](../assets/tablevision.png)
 
 ## Initializing & Image Cropping
 
-### Demostration
+### Demonstration
 ![initializer](../assets/initializer.gif)
 
 ### What are we doing here?
