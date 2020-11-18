@@ -5,19 +5,39 @@
 
 ## Overview
 ### Tray Out
-To detect the tray out from the hawker stalls, we used the Round Force Sensor and RFID Sensor together with our RaspberryPi. We have strategically placed our sensors on a board so that when trays are placed on it and both sensors detect that there is a tray placed, the program in the RaspberryPi will add a tray-out count into our database.
+To detect the tray out from the hawker stalls, we used the <b>Round Force Sensor</b> and <b>RFID Sensor</b> together with our RaspberryPi. We have strategically placed our sensors on a board which can detect when a tray is placed on it and when a tray is removed from it. 
+
+Thus, when a tray is removed from the board, the program in the RaspberryPi will add a tray-out count into the database.
 
 ### Tray In
-At the hawker, we observed that there are two common ways which trays are being returned; the first being the patron returning to the tray return point and the second being the cleaners returning the trays to the cleaners' trolley. To count the number of tray return from the patrons, we take the number of tray out from the above method and deduct it by the number of trays returned by the cleaners. The number of trays returned by the cleaners into the trolley is collected by using the Round Force Sensor and Motion Sensor together with the RaspberryPi. With strategic placement of our sensors on the trolley, we are able to detect when the cleaners place a tray onto the trolley which will trigger our program in the RaspberryPi to add a tray-in count into our database.
+At the hawker, we observed that there are two common ways which trays are being returned; the first being the patron returning to the tray return point and the second being the cleaners returning the trays to the cleaners' trolley. 
+
+To count the number of tray return from the patrons, we take the number of tray out from the above method and deduct it by the number of trays returned by the cleaners. The number of trays returned by the cleaners into the trolley is counted by using the <b>Round Force Sensor</b> and <b>Motion Sensor</b> together with the RaspberryPi. 
+
+With strategic placement of our sensors on the trolley, we are able to detect when the cleaners place a tray onto the trolley which will trigger our program in the RaspberryPi to add a tray-in count into our database.
 
 ## Sensor Modalities
-### Tray Out
-* Round Force Sensor (FSR)
-* RFID Sensor
+### How it works - Tray Out
+To collect the tray-out data, our aim is to provide a <b>hassle-free</b> and <b>obstruction-free set up</b> for the hawker while collecting accurate data. 
 
-### Tray In
+To do so, we used velcros to place our RaspberryPi and sensor board so that it is easy for the hawker to tear down and set up every day. On the sensor board, we have the round force sensor and RFID sensor which detects when a tray is placed together and when there is weight placed on the tray. 
+
+Once the tray is removed from the sensor board, our program will add a tray-out count into the database.
+### Sensors we use
 * Round Force Sensor (FSR)
-* Motion Sensor
+* RFID Sensor \
+![Data](../assets/tray-out.gif)
+
+### How it works - Tray In
+We placed our sensor board in the middle rack of the trolley as we observed that most of the used trays taken from the hawker table by the cleaner were being placed in the middle rack. 
+
+On the sensor board, we have our round force sensor to detect when there is tray placed on the board. This allows us to track the first tray-in count on the trolley and add the relevant count into the database. For subsequent tray-in counts, we used the motion sensor which is placed directly above the board to detect the motion when more trays are placed into the trolley. Upon detection of tray placed into the trolley, we add a tray-in count into the database. 
+
+Lastly, as the trolley must be mobile and cannot be connected to a power source at all times, we used a portable charger to power the RaspberryPi which was attached to our sensor board.
+### Sensors we use
+* Round Force Sensor (FSR)
+* Motion Sensor \
+![Data](../assets/tray-in.gif)
 
 ## Data, Insights and Accuracy
 ### Data
