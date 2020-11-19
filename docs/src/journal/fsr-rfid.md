@@ -4,6 +4,8 @@
 ![diagram](../assets/architectureForRfidFSR.png)
 
 ## Overview
+Our solution is designed to be placed on respective hawker stalls and cleaner's trolley to track the number of trays that is being taken out from the stall and the number of tray cleared by the cleaners. The main objective of this solution is to make it portable and obstruction-free so it will not hinder hawkers' operations. We will be monitoring negative tray return rate by looking at number of tray return to the trolley, with this data we can do some manipulation and we are able to calculate the postive tray return rate.
+
 ### Tray Out
 To detect the tray out from the hawker stalls, we used the <b>Round Force Sensor</b> and <b>RFID Sensor</b> together with our RaspberryPi. We have strategically placed our sensors on a board which can detect when a tray is placed on it and when a tray is removed from it. 
 
@@ -20,12 +22,22 @@ With strategic placement of our sensors on the trolley, we are able to detect wh
 ### How it works - Tray Out
 To collect the tray-out data, our aim is to provide a <b>hassle-free</b> and <b>obstruction-free set up</b> for the hawker while collecting accurate data. 
 
-To do so, we used velcros to place our RaspberryPi and sensor board so that it is easy for the hawker to tear down and set up every day. On the sensor board, we have the round force sensor and RFID sensor which detects when a tray is placed together and when there is weight placed on the tray. 
-
+To do so, we used velcros to place our RaspberryPi and sensor board so that it is easy for the hawker to tear down and set up every day. As our solution, will be placed in extreme condition such as heat from boiling water or even possible water spillage. Our team waterproof the entire board using delt and ziplock bag to waterproof the RaspberryPi with just a gap to slot in the power source. On the sensor board, we have the round force sensor and RFID sensor which detects when a tray is placed together and when there is weight placed on the tray. 
+ 
 Once the tray is removed from the sensor board, our program will add a tray-out count into the database.
+
+#### Summarise Flow:
+1) Tray being placed on the board - Force detected (Value change from 0 to 1)
+2) Food being placed on the tray the weight will push the tray down - RFID Detected (Value change from 0 to 1)
+3) Data will be added into the database once the tray is being removed (FSR and RFID value will be reset to 0)
+
 ### Sensors we use
 * Round Force Sensor (FSR)
 * RFID Sensor \
+
+#### View Our [Tray in Setup](https://www.youtube.com/watch?v=Xc8Itq1mNtk&feature=youtu.be) 
+Here is a short clip on how we setup our tray in method.
+
 ![Data](../assets/tray-out.gif)
 
 ### How it works - Tray In
@@ -33,7 +45,16 @@ We placed our sensor board in the middle rack of the trolley as we observed that
 
 On the sensor board, we have our round force sensor to detect when there is tray placed on the board. This allows us to track the first tray-in count on the trolley and add the relevant count into the database. For subsequent tray-in counts, we used the motion sensor which is placed directly above the board to detect the motion when more trays are placed into the trolley. Upon detection of tray placed into the trolley, we add a tray-in count into the database. 
 
+The round force sensor also help to track when the cleaner remove the stack of trays collected from the trolley back to the stall, when we detect motion and there is no force detected we will take it as a trays had been removed from the trolley. 
+
 Lastly, as the trolley must be mobile and cannot be connected to a power source at all times, we used a portable charger to power the RaspberryPi which was attached to our sensor board.
+
+#### Summarise Flow:
+1) When a tray is being placed on the trolley - Force detected (Value change from 0 to 1) - Motion detected (Value change from 0 to 1) 
+2) Data will then be added to the database 
+3) Once tray is being removed from the trolley - Motion detected (Value change from 0 to 1) - Force not detected (Value change from 1 to 0)
+4) Add a minus 1 count to the database
+
 ### Sensors we use
 * Round Force Sensor (FSR)
 * Motion Sensor \
@@ -117,7 +138,7 @@ For convinience sake, cleaners may choose to return trays directly back to the s
 As the solution is just a proof-of-concept, we only have the budget to install our solution on 1 of the few trolleys in the hawker center. Hence, data collected will only reflects a sector of the hawker center. However, to make best use of our current limitation, we chose the trolley situated closest to our hawker stall based on our observation of where most of the patrons will likely to be seated at, after purchasing their food, so we could maximize our coverage of the hawker center.
 
 ### Limited range of RFID sensor
-The RFID sensor only had a detection range of 5-7CM, which are only detectable near contact. Hence, tray has to be placed in a precise position for the RFID sensor to detect. To overcome this solution, our team have pasted 2 RFID stickers on both side of the tray to ensure that the RFID sensor is able to detect the tray accurately.
+The RFID sensor only had a detection range of 5-7CM, which are only detectable near contact. Hence, tray has to be placed in a precise position for the RFID sensor to detect. To overcome this solution, our team have pasted 2 RFID stickers on both side of the tray to ensure that the RFID sensor is able to detect the tray accurately. RFID range will also be affected with any metal product nearby, for our solution we overcome this by putting a styrofoam board between the sensors and the metal cabinet to reduce the impact on our RFID reader. 
 
 ## Key Benefits Of Our Solution
 The key benefits includes:
