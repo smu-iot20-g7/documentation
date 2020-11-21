@@ -1,4 +1,4 @@
-# Round Force Sensor + RFID Tray Tagging
+# Tray in/out: Round Force Sensor + RFID Tray Tagging + PIR Motion Sensor
 
 ## Architecture Diagram
 ![diagram](../assets/architectureForRfidFSR.png)
@@ -57,7 +57,7 @@ Lastly, as the trolley must be mobile and cannot be connected to a power source 
 
 ### Sensors we use
 * Round Force Sensor (FSR)
-* Motion Sensor \
+* Motion Sensor
 ![Data](../assets/tray-in.gif)
 
 ## Data, Insights and Accuracy
