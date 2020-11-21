@@ -48,6 +48,8 @@ For this, we leveraged on the `matplotlib` Python library to provide the X-y coo
 
 ![initialiser](../assets/initialiser.gif)
 
+After initialising, we send our table coordinates to our _Processer_. _Processer_ will create `Table` objects with the coordinates specified.
+
 ## Sensor modalities
 
 ### Defining session states
@@ -71,9 +73,31 @@ The `tablevision_processer.py` script, or what we call, _The Processor_, is esse
 
 The _Processor_ was deployed on the Cloud using a basic Compute instance (in our case, AWS EC2). In this _instance_ (pun intended), it might be an overkill to use an entire EC2, or opted for something like Firebase instead. However, we just wanted something quick and familiar while we worry about getting the right data and insights.
 
-The _Processor_ acts as a Cloud API endpoint to receive our images from the Raspberry Pi. It then sends an API request to our Google Vision AI deployed model. Once the results are returned, we will process the results with our Table State Session logic that we will discuss in depth below.
+The _Processor_ acts as a Cloud API endpoint to receive our images from the Raspberry Pi. It then sends an API request to our Google Vision AI deployed model. 
 
-Essentially, in a sweet summary, our _Processer_ API endpoint does the following:
+An example of the result returned by the Google Vision API is, after formatting by our `resultFormatter(prediction)` in _The Processer_:
+
+```py
+def resultFormatter(prediction):
+
+    # ... processing the format of prediction here ...
+
+    # centre is used to map out the average location of an object. 
+    # This is for us to detect if the object is roughly within the boundaries of a table.
+    centre = {"x": (min(x) + max(x)) / 2, "y": (min(y) + max(y)) / 2}
+
+    return {
+        "name": "Tray",
+        "location_boundary": {
+            "x": [0.03948170731707307, 0.4337906504065041],
+            "y": [0.09692911255411243, 0.09692911255411243]
+        },
+        "score": 0.95,
+        "centre_point": centre
+    }
+```
+
+Essentially, in a short and sweet summary, our _Processer_ API endpoint does the following:
 
 1. Receives image from our Raspberry Pi deployed on-site
 2. Sends the image to Google Cloud Vision AI API
@@ -91,9 +115,84 @@ For example, if there are transient people (such as a cleaner entering the table
 
 ## Data, insights and accuracy
 
+### Data
+
+The camera module for Tablevision is connected to the Raspberry Pi. The Pi is used as a gateway node to send image data to our _Processer_, which processes logic and sends the table state data to our MongoDB databas. An example of a table session data is as follows:
+
+```json
+{
+    "_id": {
+        "$oid": "5f9386a54c5857a2a68e16e9"
+    },
+    "sessionId": {
+        "$binary": "DhX1DPJkR/O+gBx+e+BrJQ==",
+        "$type": "3"
+    },
+    "sessionStart": {
+        "$date": "2020-10-24T01:43:01.630Z"
+    },
+    "states": [0, 2, 0],
+    "tableId": 46,
+    "sessionEnd": {
+        "$date": "2020-10-24T01:59:53.236Z"
+    },
+    "tray_count": 2
+}
+```
+
+From the above data entry, notice the `states` attribute of `[0, 2, 0]`. The state has gone from **0 (vacant) -> 2 (occupied) -> 0 (vacant)**, which indicates that a patron self-return has occurred.
+
+
 ## Limitations
 
-## Key Benefits
+### Immediate swap of patrons
+
+During peak hours, patrons might quickly swap with one another, as seen in the below illustration:
+
+![Patron Swap](../assets/swap_patron.gif)
+
+In such instances; as our camera only sends image data every ~2-3 seconds, the camera is not able to detect such state changes. This might result in data collection inaccuracies.
+
+However, we considered the following statements to counter this limitation:
+
+* As per the cleaning shift supervisor's directives, trays cannot be cleared when the patron who ate the meal with the tray is still sitting down
+* Patrons who are seated in an uncleared table will ask the cleaners to kindly clear the table for them
+
+With these statements, one might be able to implement, using the following pseudocode:
+
+```
+if Current State is 2:
+    if table without Crockeries or Trays:
+        then begin new session
+        set previous session to 0 > 2 > 1 > 0
+```
+
+**NOTE**: _This means that cleaner has cleared the tray, indicating the negative tray return behaviour of the previous patron._
+
+## Key Benefits of Tablevision
+
+Tablevision might help to benefit the data collection process of tray return behaviour by:
+
+* identifying tray return behaviour through automated object detection
+* cheaper than deploying manual surveyors in the long run
+* data is digitised, processes are digitalised
+* scale to needs and new functionalities
+
+### Identifying tray return behaviour & automating data collection
+
+Leveraging on AI to automatically detect objects, we are able to process logic to understand tray return behaviour. This reduces the need to deploy surveyors as manual labour, and reduces on costs to deploy staff as tray return ambassadors/surveyors.
+
+### Tablevision digitalises data collection
+
+With Tablevision, it's not just digitising the data we collect on tray return behaviour, but it digitalises the way data collection processes are done.
+
+### Scale to needs and new functionalities
+
+With Tablevision's object boundary functionality, one can rapidly add more table boundaries through initialising Tablevision. Furthermore, the field-of-view of Tablevision is only limited to the infrastructure that Tablevision is deployed at.
+
+If one is able to deploy a large camera sensor with a wide-angle lens – or a higher location, Tablevision can be specified to include more tables.
+
+More functionalities can be added to Tablevision, such as trash and waste detection, easily. This only requires one to train the custom model for Tablevision.
 
 ## Costs
 
@@ -116,7 +215,7 @@ We couldn't have executed this without worry if it weren't for the surprising pr
 
 Our fixed cost was used to train the machine learning model on AutoML Vision API. We spent a total of **6.87 hours** to train **51 images** with the 3 labels for **US$ 29.73**.
 
-As per November 2020, [Google Cloud Vision API](https://cloud.google.com/vision/automl/pricing#image_classification_deployment_and_prediction_costs)'s Pricing page states:
+As per November 2020, [Google Cloud Vision API](https://cloud.google.com/vision/automl/pricing#image_classification_deployment_and_prediction_costs)'s Pricing page states (in USD):
 
 > The cost for AutoML Vision Image Classification model training is **$3.15 per node hour**.
 >
@@ -126,12 +225,12 @@ As per November 2020, [Google Cloud Vision API](https://cloud.google.com/vision/
 
 The main disadvantage of using the AutoML Vision AI is that the compute instances used to deploy our models doesn't automatically scale down or up when needed. This will result in underutilised model deployments and is not cost effective at all.
 
-If we were to deploy for 14 hours with one node (our current configuration for the proof-of-concept) – the length of Beo Crescent Market Food Centre's operating hours, that will cost **US$ 17.50** per operational day.
+If we were to deploy for 14 hours with one node (our current configuration for the proof-of-concept) – the length of Beo Crescent Market Food Centre's operating hours, that will cost **S$ 35** per operational day (taken from our billing statement in SGD)
 
 | Product | Price (SGD) | Units |
 |---------|-------|-------|
-| AutoML Model Training | **$ 42** | One-time
-| Prediction request deployment | **$ 17.50** | per day
+| AutoML Model Training | **$ 29.73** | One-time
+| Prediction request deployment | **$ 35** | per day
 
 We discovered that one could deploy the AutoML model on Cloud Run, which is essentially Google's answer to AWS Lambda – Functions-as-a-Service (FaaS). However, due to the limited timeframe of the project (and partly, due to the free credits 😊 ), we did not deploy the model on Cloud Run.
 
