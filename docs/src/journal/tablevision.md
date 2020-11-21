@@ -106,6 +106,8 @@ For example, if there are transient people (such as a cleaner entering the table
 
 Honestly, any camera that's greater than 2MP will do, which includes ordinary web cameras connected through the USB port of the Raspberry Pi.
 
+We did not include the costs of using mobile networks through our internet hotspot as this is a proof-of-concept. A fully production-ready deployment would have accounted for networking infrastructure such as the fibre network connectivity.
+
 ### Software + AI
 
 ::: warning P.S.
@@ -130,3 +132,28 @@ If we were to deploy for 14 hours with one node (our current configuration for t
 |---------|-------|-------|
 | AutoML Model Training | **$ 42** | One-time
 | Prediction request deployment | **$ 17.50** | per day
+
+We discovered that one could deploy the AutoML model on Cloud Run, which is essentially Google's answer to AWS Lambda – Functions-as-a-Service (FaaS). However, due to the limited timeframe of the project (and partly, due to the free credits 😊 ), we did not deploy the model on Cloud Run.
+
+If you're interested, this [Medium article by Juri Sarbach](https://medium.com/@juri.sarbach/how-to-deploy-your-automl-model-in-a-cost-effective-way-5efdd377d4d2) walks the reader through on how to export the AutoML Model to Google Cloud Storage (GCS), and then to Cloud Run.
+
+However, Juri pointed out the tradeoff with using Cloud Run:
+
+> _Typically, scale-to-zero services suffer from cold start latency when they haven’t been used for some time._
+
+In short, if we were to deploy on Cloud Run, here's the quick maths behind it:
+
+* Our requests come in once every 2 seconds, or about **420 requests per day**
+
+From the [Google Cloud Run Pricing page](https://cloud.google.com/run/pricing):
+* 2 million requests free per month
+* US$ 0.40 / million requests beyond the free quota
+
+Then, for the sake of simple calculations:
+
+| Product | Price (SGD) | Units |
+|---------|-------|-------|
+| AutoML Model Training | **$ 42** | One-time
+| Cloud Run deployment | **FREE<sup>1</sup>** | per month
+
+_<sup>1</sup> For the sake of quick calculations, not considering networking costs incurred by transferring images across the mobile network (mobile hotspot), our Cloud Run deployment should be nearly free._
