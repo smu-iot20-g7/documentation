@@ -11,7 +11,7 @@ The term "tray returns" is our umbrella term that refers to hawker centre trays 
 
 Our solution incorporates an 8-megapixel camera sensor, connected to a sensor gateway. In our case, the gateway is our Raspberry Pi. It is designed to be able to automate the detection of self-initiated tray returns – or the reverse of tray returns by cleaners, through a custom machine learning model training.
 
-Through Tablevision, we will be monitoring:
+Through Tablevision, we are able to monitor:
 
 * **Negative tray return rates**: a measure of tray returns by the cleaners – hence the term "negative" which indicates negative behaviour by patrons for not clearing trays, and;
 * **Positive tray return rates**: a measure of tray self-returns by patrons – the term "positive" indicates the positive behaviour of patrons clearing up after eating
@@ -48,7 +48,7 @@ For this, we leveraged on the `matplotlib` Python library to provide the X-y coo
 
 ![initialiser](../assets/initialiser.gif)
 
-After initialising, we send our table coordinates to our _Processer_. _Processer_ will create `Table` objects with the coordinates specified.
+After initialising, we will send our table coordinates to our _Processer_. _Processer_ will create `Table` objects with the coordinates specified.
 
 ## Sensor modalities
 

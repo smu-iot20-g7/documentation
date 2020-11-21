@@ -47,7 +47,7 @@ module.exports = {
         },
         {
             text: 'Dashboard',
-            link: 'https://v1.vuepress.vuejs.org'
+            link: 'https://d2b9ybaeuz42aa.cloudfront.net'
         }
         ],
         sidebar: {
