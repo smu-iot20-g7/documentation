@@ -6,7 +6,7 @@
 ## Overview
 
 ::: tip NOTE
-The term "tray returns" is our umbrella term that refer to hawker centre trays or crockeries (i.e. bowls, cutleries, plates) returned to the Tray Return Point.
+The term "tray returns" is our umbrella term that refers to hawker centre trays or crockeries (i.e. bowls, cutleries, plates) returned to the Tray Return Point.
 :::
 
 Our solution incorporates an 8-megapixel camera sensor, connected to a sensor gateway. In our case, the gateway is our Raspberry Pi. It is designed to be able to automate the detection of self-initiated tray returns – or the reverse of tray returns by cleaners, through a custom machine learning model training.
@@ -71,7 +71,7 @@ We used the table states to detect each session and the activities. In summary, 
 
 The `tablevision_processer.py` script, or what we call, _The Processor_, is essentially an API endpoint that aims to decouple the heavy processing logic away from the low-compute power of the Raspberry Pi, which was deployed together with our camera module at Beo Crescent.
 
-The _Processor_ was deployed on the Cloud using a basic Compute instance (in our case, AWS EC2). In this _instance_ (pun intended), it might be an overkill to use an entire EC2, or opted for something like Firebase instead. However, we just wanted something quick and familiar while we worry about getting the right data and insights.
+The _Processor_ was deployed on the Cloud using a basic Compute instance (in our case, AWS EC2). In this _instance_ (pun intended), it might be an overkill to use an entire EC2, and we could've opted for something like Firebase instead. However, we just wanted something quick and familiar while we worry about getting the right data and insights.
 
 The _Processor_ acts as a Cloud API endpoint to receive our images from the Raspberry Pi. It then sends an API request to our Google Vision AI deployed model. 
 
