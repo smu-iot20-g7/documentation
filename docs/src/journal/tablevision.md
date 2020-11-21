@@ -113,7 +113,7 @@ There are some measures put in place to prevent "unclean" data and limitations t
 For example, if there are transient people (such as a cleaner entering the table frame to clear crockeries and trays), it might be detected as **Occupied**. So for this, we created a **minimum session timing of 3 minutes**, or 180 seconds.
 :::
 
-## Data, insights and accuracy
+## Data, Insights and Accuracy
 
 ### Data
 
@@ -140,8 +140,58 @@ The camera module for Tablevision is connected to the Raspberry Pi. The Pi is us
 }
 ```
 
-From the above data entry, notice the `states` attribute of `[0, 2, 0]`. The state has gone from **0 (vacant) -> 2 (occupied) -> 0 (vacant)**, which indicates that a patron self-return has occurred.
+From the above data entry, notice the `states` attribute of `[0, 2, 0]`. The state has gone 
+from **0 (vacant) -> 2 (occupied) -> 0 (vacant)**, which indicates that a patron self-return has occurred.
 
+### Insights
+
+As our tablevision solution was deployed as a proof of concept, we deployed the camera over the span of 4 full days (27 Oct 2020 to 30 Oct 2020). With the data collected, we are able to deduce the tray return rate and gain useful insights on patrons behavior.
+
+As we were able to utilise and make full use of our trained model for detecting object, we were able to log down the number of trays that is on the table per session. With the number of trays data available, we were able to gain useful insights on the patrons behavior. Below is the distribution frequency for positive/negative tray return for x given number of tray.
+
+**Positive Tray Return (Self Return)**
+
+| No. of Trays | Cumulative Distribution (%)|
+|---|----------|--------| --------|
+| 1 | 45.44% |
+| 2 | 32.34% |
+| 3 | 9.72% |
+| 4 | 12.5% |
+
+**Negative Tray Return (Cleaner Return)**
+
+| No. of Trays | Cumulative Distribution (%)|
+|---|----------|--------| --------|
+| 1 | 17.52% |
+| 2 | 17.88% |
+| 3 | 24.09% |
+| 4 | 40.51% |
+
+Hence, we are able to conclude the following:
+
+1. For **Positive Self Return**, most patron will return their own tray if the tray count is less than 3
+2. For **Negative Cleaner Return**, most patron does not return their own tray if the tray count is more than 2
+
+### Accuracy
+
+#### Ground Truth vs Sensor Data
+
+![ground truth vs sensor](../assets/accuracy1.jpg)
+
+To identify the accuracy of the data collected, our team collected and compared the ground truth data against data collected from the IoT devices. With reference to the above figure, we used the percent error formula to calculate the accuracy of our data. The data accuracy for Table Vision is at 46.15%.
+
+To calculate percentage error, we use this [formula](https://www.omnicalculator.com/statistics/accuracy#how-to-use-the-accuracy-calculator):
+| Percent error | 
+| ------------- |
+|     (\|(Vo - Vₐ)\|/Vₐ) * 100          |
+
+#### Stats
+
+To further validate the data accuracy, we ran a t-test to compare any significant difference between MSE and our dataset.
+
+![t-test](../assets/accuracy2.jpg)
+
+From the calculation, we are 95% confidence that the average self returned tray will fall within the range of 51%
 
 ## Limitations
 

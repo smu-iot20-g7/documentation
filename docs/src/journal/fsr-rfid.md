@@ -33,7 +33,7 @@ Once the tray is removed from the sensor board, our program will add a tray-out 
 
 ### Sensors we use
 * Round Force Sensor (FSR)
-* RFID Sensor \
+* RFID Sensor
 
 #### View Our [Tray in Setup](https://www.youtube.com/watch?v=Xc8Itq1mNtk&feature=youtu.be) 
 Here is a short clip on how we setup our tray in method.
