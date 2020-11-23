@@ -46,6 +46,10 @@ module.exports = {
             link: '/tablevision/',
         },
         {
+            text: 'Our Journey',
+            link: '/our_journey/',
+        },
+        {
             text: 'Dashboard',
             link: 'https://d2b9ybaeuz42aa.cloudfront.net'
         }
