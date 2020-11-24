@@ -8,4 +8,5 @@ cd $DIR/docs
 npm run build
 
 # navigate into the build output directory
+rm -rf $DIR/dist
 mv $DIR/docs/src/.vuepress/dist $DIR

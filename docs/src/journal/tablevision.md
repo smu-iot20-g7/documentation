@@ -145,29 +145,29 @@ from **0 (vacant) -> 2 (occupied) -> 0 (vacant)**, which indicates that a patron
 
 ### Insights
 
-As our tablevision solution was deployed as a proof of concept, we deployed the camera over the span of 4 full days (27 Oct 2020 to 30 Oct 2020). With the data collected, we are able to deduce the tray return rate and gain useful insights on patrons behavior.
+Being just a proof-of-concept, we deployed the camera over a span of 4 full days (27 Oct 2020 to 30 Oct 2020).
 
-As we were able to utilise and make full use of our trained model for detecting object, we were able to log down the number of trays that is on the table per session. With the number of trays data available, we were able to gain useful insights on the patrons behavior. Below is the distribution frequency for positive/negative tray return for x given number of tray.
+As we were able to utilise and make full use of our trained model for detecting objects, we were able to log down the number of trays that is on the table per session. With data on the number of trays available, we could generate useful insights on the patrons' tray usage behavior. Below is the distribution frequency for the positive & negative tray return rates grouped by the number of trays.
 
-**Positive Tray Return (Self Return)**
+**Positive Tray Returns (Self-returns)**
 
 | No. of Trays | Cumulative Distribution (%)|
-|---|----------|--------| --------|
+|---|----------|
 | 1 | 45.44% |
 | 2 | 32.34% |
 | 3 | 9.72% |
 | 4 | 12.5% |
 
-**Negative Tray Return (Cleaner Return)**
+**Negative Tray Returns (Cleaner Returns)**
 
 | No. of Trays | Cumulative Distribution (%)|
-|---|----------|--------| --------|
+|---|----------|
 | 1 | 17.52% |
 | 2 | 17.88% |
 | 3 | 24.09% |
 | 4 | 40.51% |
 
-Hence, we are able to conclude the following:
+Hence, we were able to deduce the following:
 
 1. For **Positive Self Return**, most patron will return their own tray if the tray count is less than 3
 2. For **Negative Cleaner Return**, most patron does not return their own tray if the tray count is more than 2
@@ -178,7 +178,7 @@ Hence, we are able to conclude the following:
 
 ![ground truth vs sensor](../assets/accuracy1.jpg)
 
-To identify the accuracy of the data collected, our team collected and compared the ground truth data against data collected from the IoT devices. With reference to the above figure, we used the percent error formula to calculate the accuracy of our data. The data accuracy for Table Vision is at 46.15%.
+To identify the accuracy of the data collected, our team collected and compared the ground truth data against data collected from the IoT devices. With reference to the above figure, we used the Percent Error formula to calculate the accuracy of our data. The data accuracy for Tablevision is at **46.15%**.
 
 To calculate percentage error, we use this [formula](https://www.omnicalculator.com/statistics/accuracy#how-to-use-the-accuracy-calculator):
 | Percent error | 
@@ -187,11 +187,11 @@ To calculate percentage error, we use this [formula](https://www.omnicalculator.
 
 #### Stats
 
-To further validate the data accuracy, we ran a t-test to compare any significant difference between MSE and our dataset.
+To further validate the data accuracy, we ran a T-Test to compare any significant differences between MSE and our dataset.
 
 ![t-test](../assets/accuracy2.jpg)
 
-From the calculation, we are 95% confidence that the average self returned tray will fall within the range of 51%
+From the calculation, we are 95% confident that the average self-returned trays will fall within the range of 51%
 
 ## Limitations
 

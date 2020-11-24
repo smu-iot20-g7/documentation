@@ -1,9 +1,9 @@
-# The start of Team Hardcode Beo Cresent Journey 
+# Team Hardcode's Beo Cresent Journey Gallery 
 
 ![diagram](../assets/journey/group_photo.jpg)
 
 ## Site Visit
-On 23 August 2020, we went on site to see what is the current situation in the hawker center and possible IoT solution that will assist our sponsors.
+On 23 August 2020, we went on site to see what is the current situation in the hawker center and possible IoT solutions that could assist our sponsors.
 
 ![diagram](../assets/journey/sitevisit5.jpg)
 ![diagram](../assets/journey/sitevisit4.jpg)
@@ -16,7 +16,7 @@ On 25 September 2020, we went down to see how we can install our IoT solution an
 ![diagram](../assets/journey/sitevisit3.jpg)
 
 ## Proof of Data Collection 
-On 13 October, we tested our implementation in School and head down to a nearby Hawker to test our prototype. 
+On 13 October, we tested our implementation in School and proceeded to a nearby hawker centre to test our prototype. 
 
 ![diagram](../assets/journey/setup.jpg)
 ![diagram](../assets/journey/setting_up_FSR.jpg)
@@ -25,13 +25,15 @@ On 13 October, we tested our implementation in School and head down to a nearby 
 ![diagram](../assets/journey/testing1.jpg)
 ![diagram](../assets/journey/tablevision_setup6.jpg)
 
-Test our prototype and realised that metal surface will affect the RFID readings.
+We were testing our prototype and realised that metal surfaces will affect the RFID readings.
 
 ![diagram](../assets/journey/proof_of_collection_RFIDFSR_1.jpg)
 ![diagram](../assets/journey/data_collection.jpg)
 
 ## Proof of Deployment
-We went down to Beo Crescent Hawker Centre to deploy our image sensor and test the accuracy of our model
+
+We went down to Beo Crescent Hawker Centre to deploy our image sensor and to test the accuracy of our model
+
 ![diagram](../assets/journey/tablevision_setup.jpg)
 ![diagram](../assets/journey/tablevision_setup1.jpg)
 ![diagram](../assets/journey/tablevision_setup2.jpg)
