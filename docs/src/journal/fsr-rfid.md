@@ -1,4 +1,4 @@
-# Tray in/out: Round Force Sensor + RFID Tray Tagging + PIR Motion Sensor
+# Detecting Tray In/Out with FSR, RFID & Motion Sensors
 
 ## Architecture Diagram
 ![diagram](../assets/architectureForRfidFSR.png)

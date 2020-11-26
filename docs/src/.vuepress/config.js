@@ -38,14 +38,6 @@ module.exports = {
             link: '/journal/',
         },
         {
-            text: 'FSR-RFID',
-            link: '/fsr-rfid/',
-        },
-        {
-            text: 'Tablevision',
-            link: '/tablevision/',
-        },
-        {
             text: 'Our Journey',
             link: '/our_journey/',
         },
@@ -81,6 +73,7 @@ module.exports = {
                     collapsable: false,
                     children: [
                         '',
+                        'documentation'
                     ]
                 }
             ],
