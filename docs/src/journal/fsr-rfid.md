@@ -152,6 +152,7 @@ With the IoT solution deployed, we could automate the manual data collection pro
 The dashboard feature allow us to view tray return rate for specific periods of time. From the data analysed, we could see that patrons are less likely to return trays during peak hours. With such a useful insight, we could pin point the reason behind such behavior and works towards creating campaign and solution targeted at the specific timing or patrons.
 
 ## Main Video
+
 ### To see how our solution works at the hawker: 
-#### View Our [Pitch Video](https://www.youtube.com/watch?v=TglGIDq8pWQ) 
-#### View Our [Group video](https://www.youtube.com/watch?v=JRFURIfBGSg) 
+
+#### View our [group's video](https://www.youtube.com/watch?v=JRFURIfBGSg)
