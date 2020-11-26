@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Detecting Tray In/Out | CS462: G7 IoT Documentation</title>
+    <meta name="generator" content="VuePress 1.5.2">
+    
+    <meta name="description" content="Documentation for our RFID and Tablevision IoT Solution for Beo Crescent">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="preload" href="/assets/css/0.styles.64f42e8e.css" as="style"><link rel="preload" href="/assets/js/app.f43c135a.js" as="script"><link rel="preload" href="/assets/js/2.442eaabe.js" as="script"><link rel="preload" href="/assets/js/12.76d52cc6.js" as="script"><link rel="prefetch" href="/assets/js/10.aabbe96c.js"><link rel="prefetch" href="/assets/js/11.59b6f721.js"><link rel="prefetch" href="/assets/js/13.ff62b263.js"><link rel="prefetch" href="/assets/js/3.2eeef809.js"><link rel="prefetch" href="/assets/js/4.5d0f0f89.js"><link rel="prefetch" href="/assets/js/5.e4603a38.js"><link rel="prefetch" href="/assets/js/6.4ec631e2.js"><link rel="prefetch" href="/assets/js/7.8218e44e.js"><link rel="prefetch" href="/assets/js/8.4349f59a.js"><link rel="prefetch" href="/assets/js/9.8d51dd73.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.64f42e8e.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">CS462: G7 IoT Documentation</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/journal/" class="nav-link">
+  Journal
+</a></div><div class="nav-item"><a href="/tray-inout/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  Tray In/Out Docs
+</a></div><div class="nav-item"><a href="/tablevision/" class="nav-link">
+  Tablevision Docs
+</a></div><div class="nav-item"><a href="/our_journey/" class="nav-link">
+  Our Journey
+</a></div><div class="nav-item"><a href="https://d2b9ybaeuz42aa.cloudfront.net" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Dashboard
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/journal/" class="nav-link">
+  Journal
+</a></div><div class="nav-item"><a href="/tray-inout/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  Tray In/Out Docs
+</a></div><div class="nav-item"><a href="/tablevision/" class="nav-link">
+  Tablevision Docs
+</a></div><div class="nav-item"><a href="/our_journey/" class="nav-link">
+  Our Journey
+</a></div><div class="nav-item"><a href="https://d2b9ybaeuz42aa.cloudfront.net" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Dashboard
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Tray In/Out Docs</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/tray-inout/" aria-current="page" class="active sidebar-link">Detecting Tray In/Out</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/tray-inout/#force-sensitvity-sensor-pir-motion-sensor-rfid-reader" class="sidebar-link">Force Sensitvity Sensor, PIR Motion Sensor, RFID Reader</a></li><li class="sidebar-sub-header"><a href="/tray-inout/#device-environemnt" class="sidebar-link">Device Environemnt</a></li><li class="sidebar-sub-header"><a href="/tray-inout/#instructions" class="sidebar-link">Instructions</a></li></ul></li><li><a href="/tray-inout/documentation.html" class="sidebar-link">Tray in/out Code Documentation</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="detecting-tray-in-out"><a href="#detecting-tray-in-out" class="header-anchor">#</a> Detecting Tray In/Out</h1> <div class="custom-block tip"><p class="custom-block-title">Hello there!</p> <p>Check out our <a href="https://github.com/smu-iot20-g7/FSR-RFID-Reader" target="_blank" rel="noopener noreferrer">Github Repository<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> to see our source codes or read our journal <a href="/journal/fsr-rfid.html">here</a>.</p></div> <h2 id="force-sensitvity-sensor-pir-motion-sensor-rfid-reader"><a href="#force-sensitvity-sensor-pir-motion-sensor-rfid-reader" class="header-anchor">#</a> Force Sensitvity Sensor, PIR Motion Sensor, RFID Reader</h2> <p>Monitor the tray return rates at Beo Crescent Hawker Centre by tracking the number of trays leaving a particular hawker stall and the number of trays return by a cleaner to the trolley.</p> <h2 id="device-environemnt"><a href="#device-environemnt" class="header-anchor">#</a> Device Environemnt</h2> <p>All the codes run with python2.7 or python3.7
+Raspberry Pi – _sender: To capture the tray in/out counts and send it to a queue system (MQTT)</p> <h2 id="instructions"><a href="#instructions" class="header-anchor">#</a> Instructions</h2> <ol><li>Clone this entire repository to a raspeberryPi 3</li> <li>Run the requirement.txt file</li> <li>Run the bash script - run_setup.sh</li> <li>Ensure Trolley_tray_in.py and RFID_FSR.py is running on the Raspberry Pi.</li></ol></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><!----> <span class="next"><a href="/tray-inout/documentation.html">
+        Tray in/out Code Documentation
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.f43c135a.js" defer></script><script src="/assets/js/2.442eaabe.js" defer></script><script src="/assets/js/12.76d52cc6.js" defer></script>
+  </body>
+</html>

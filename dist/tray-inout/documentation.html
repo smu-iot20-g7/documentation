@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Tray in/out Code Documentation | CS462: G7 IoT Documentation</title>
+    <meta name="generator" content="VuePress 1.5.2">
+    
+    <meta name="description" content="Documentation for our RFID and Tablevision IoT Solution for Beo Crescent">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="preload" href="/assets/css/0.styles.64f42e8e.css" as="style"><link rel="preload" href="/assets/js/app.f43c135a.js" as="script"><link rel="preload" href="/assets/js/2.442eaabe.js" as="script"><link rel="preload" href="/assets/js/13.ff62b263.js" as="script"><link rel="prefetch" href="/assets/js/10.aabbe96c.js"><link rel="prefetch" href="/assets/js/11.59b6f721.js"><link rel="prefetch" href="/assets/js/12.76d52cc6.js"><link rel="prefetch" href="/assets/js/3.2eeef809.js"><link rel="prefetch" href="/assets/js/4.5d0f0f89.js"><link rel="prefetch" href="/assets/js/5.e4603a38.js"><link rel="prefetch" href="/assets/js/6.4ec631e2.js"><link rel="prefetch" href="/assets/js/7.8218e44e.js"><link rel="prefetch" href="/assets/js/8.4349f59a.js"><link rel="prefetch" href="/assets/js/9.8d51dd73.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.64f42e8e.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">CS462: G7 IoT Documentation</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/journal/" class="nav-link">
+  Journal
+</a></div><div class="nav-item"><a href="/tray-inout/" class="nav-link router-link-active">
+  Tray In/Out Docs
+</a></div><div class="nav-item"><a href="/tablevision/" class="nav-link">
+  Tablevision Docs
+</a></div><div class="nav-item"><a href="/our_journey/" class="nav-link">
+  Our Journey
+</a></div><div class="nav-item"><a href="https://d2b9ybaeuz42aa.cloudfront.net" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Dashboard
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/journal/" class="nav-link">
+  Journal
+</a></div><div class="nav-item"><a href="/tray-inout/" class="nav-link router-link-active">
+  Tray In/Out Docs
+</a></div><div class="nav-item"><a href="/tablevision/" class="nav-link">
+  Tablevision Docs
+</a></div><div class="nav-item"><a href="/our_journey/" class="nav-link">
+  Our Journey
+</a></div><div class="nav-item"><a href="https://d2b9ybaeuz42aa.cloudfront.net" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Dashboard
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Tray In/Out Docs</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/tray-inout/" aria-current="page" class="sidebar-link">Detecting Tray In/Out</a></li><li><a href="/tray-inout/documentation.html" aria-current="page" class="active sidebar-link">Tray in/out Code Documentation</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/tray-inout/documentation.html#tray-out" class="sidebar-link">Tray Out</a></li><li class="sidebar-sub-header"><a href="/tray-inout/documentation.html#tray-in" class="sidebar-link">Tray In</a></li></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="tray-in-out-code-documentation"><a href="#tray-in-out-code-documentation" class="header-anchor">#</a> Tray in/out Code Documentation</h1> <p>This code documentation will walk you through the main processing logic on how we retrieve the data from our sensors</p> <h2 id="tray-out"><a href="#tray-out" class="header-anchor">#</a> Tray Out</h2> <div class="language-py extra-class"><pre class="language-py"><code>
+MIFAREReader <span class="token operator">=</span> MFRC522<span class="token punctuation">.</span>MFRC522<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+GPIO<span class="token punctuation">.</span>setup<span class="token punctuation">(</span><span class="token number">7</span><span class="token punctuation">,</span> GPIO<span class="token punctuation">.</span>IN<span class="token punctuation">,</span> pull_up_down<span class="token operator">=</span>GPIO<span class="token punctuation">.</span>PUD_DOWN<span class="token punctuation">)</span>
+
+db <span class="token operator">=</span> MongoClient<span class="token punctuation">(</span><span class="token string">&quot;mongodb+srv://root:0NqePorN2WDm7xYc@cluster0.fvp4p.mongodb.net/iot?retryWrites=true&amp;w=majority&quot;</span><span class="token punctuation">)</span>
+
+<span class="token comment"># Welcome message</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;RFID Detected!&quot;</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;FSR Detected&quot;</span><span class="token punctuation">)</span>
+
+<span class="token comment"># This loop keeps checking for chips. If one is near it will get the UID and authenticate</span>
+<span class="token keyword">try</span><span class="token punctuation">:</span>
+    process_status <span class="token operator">=</span> <span class="token boolean">True</span>
+    <span class="token keyword">while</span> continue_reading<span class="token punctuation">:</span>
+        <span class="token comment"># Scan for cards</span>
+        <span class="token punctuation">(</span>status<span class="token punctuation">,</span>TagType<span class="token punctuation">)</span> <span class="token operator">=</span> MIFAREReader<span class="token punctuation">.</span>MFRC522_Request<span class="token punctuation">(</span>MIFAREReader<span class="token punctuation">.</span>PICC_REQIDL<span class="token punctuation">)</span>
+        <span class="token comment"># If a card is found</span>
+        rfid_status <span class="token operator">=</span> <span class="token number">0</span> <span class="token comment"># default for rfid</span>
+       
+        <span class="token comment"># Get the UID of the card</span>
+        <span class="token punctuation">(</span>status<span class="token punctuation">,</span>uid<span class="token punctuation">)</span> <span class="token operator">=</span> MIFAREReader<span class="token punctuation">.</span>MFRC522_Anticoll<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        current_time <span class="token operator">=</span> datetime<span class="token punctuation">.</span>now<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;Time is: &quot;</span> <span class="token operator">+</span> <span class="token builtin">str</span><span class="token punctuation">(</span>current_time<span class="token punctuation">)</span><span class="token punctuation">)</span>
+        fsr_status <span class="token operator">=</span> GPIO<span class="token punctuation">.</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token number">7</span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;Weight sensor: &quot;</span> <span class="token operator">+</span> <span class="token builtin">str</span><span class="token punctuation">(</span>fsr_status<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+        <span class="token keyword">if</span> status <span class="token operator">==</span> MIFAREReader<span class="token punctuation">.</span>MI_OK <span class="token keyword">and</span> process_status <span class="token keyword">and</span> fsr_status <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">:</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;RFID and Weight Dected&quot;</span><span class="token punctuation">)</span>
+            rfid_status <span class="token operator">=</span> <span class="token number">1</span> <span class="token comment"># rfid tag detected</span>
+            posts <span class="token operator">=</span> db<span class="token punctuation">.</span>fsr_rfid<span class="token punctuation">.</span>collection
+            post_data <span class="token operator">=</span> <span class="token punctuation">{</span>
+                <span class="token string">'timestamp'</span><span class="token punctuation">:</span> current_time<span class="token punctuation">,</span>
+                <span class="token string">'rfid_status'</span><span class="token punctuation">:</span> rfid_status<span class="token punctuation">,</span>
+                <span class="token string">'fsr_status'</span><span class="token punctuation">:</span> fsr_status
+            <span class="token punctuation">}</span>
+            result <span class="token operator">=</span> posts<span class="token punctuation">.</span>insert_one<span class="token punctuation">(</span>post_data<span class="token punctuation">)</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;Inserted with ID: &quot;</span> <span class="token operator">+</span> <span class="token builtin">str</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span><span class="token punctuation">)</span>
+            process_status <span class="token operator">=</span> <span class="token boolean">False</span>
+
+        <span class="token keyword">if</span> fsr_status <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;Tray not detected&quot;</span><span class="token punctuation">)</span>
+            process_status <span class="token operator">=</span> <span class="token boolean">True</span>
+        time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span>
+
+<span class="token keyword">except</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;Something went wrong&quot;</span><span class="token punctuation">)</span>
+</code></pre></div><p>We use <code>MFRC522</code> library to get the RFID reader readings, and we retrieve data from the <code>GPIO input 7 port</code>.</p> <p>We validate the data and determine whether there is a tray detected.</p> <h2 id="tray-in"><a href="#tray-in" class="header-anchor">#</a> Tray In</h2> <div class="language-py extra-class"><pre class="language-py"><code>pir_sensor <span class="token operator">=</span> <span class="token number">7</span>
+motion<span class="token operator">=</span><span class="token number">0</span>
+grovepi<span class="token punctuation">.</span>pinMode<span class="token punctuation">(</span>pir_sensor<span class="token punctuation">,</span><span class="token string">&quot;INPUT&quot;</span><span class="token punctuation">)</span>
+GPIO<span class="token punctuation">.</span>setmode<span class="token punctuation">(</span>GPIO<span class="token punctuation">.</span>BOARD<span class="token punctuation">)</span>
+
+GPIO<span class="token punctuation">.</span>setup<span class="token punctuation">(</span><span class="token number">7</span><span class="token punctuation">,</span> GPIO<span class="token punctuation">.</span>IN<span class="token punctuation">,</span> pull_up_down<span class="token operator">=</span>GPIO<span class="token punctuation">.</span>PUD_DOWN<span class="token punctuation">)</span>
+
+
+countTray <span class="token operator">=</span> <span class="token boolean">False</span>
+fsr_bool <span class="token operator">=</span> <span class="token boolean">False</span>
+<span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+	<span class="token keyword">try</span><span class="token punctuation">:</span>
+            fsr_status  <span class="token operator">=</span> GPIO<span class="token punctuation">.</span><span class="token builtin">input</span><span class="token punctuation">(</span><span class="token number">7</span><span class="token punctuation">)</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;Weight sensor: &quot;</span> <span class="token operator">+</span> <span class="token builtin">str</span><span class="token punctuation">(</span>fsr_status<span class="token punctuation">)</span><span class="token punctuation">)</span>
+            <span class="token comment"># Sense motion, usually human, within the target range</span>
+            motion<span class="token operator">=</span>grovepi<span class="token punctuation">.</span>digitalRead<span class="token punctuation">(</span>pir_sensor<span class="token punctuation">)</span>
+            <span class="token keyword">if</span> motion<span class="token operator">==</span><span class="token number">0</span> <span class="token keyword">or</span> motion<span class="token operator">==</span><span class="token number">1</span><span class="token punctuation">:</span>	<span class="token comment"># check if reads were 0 or 1 it can be 255 also because of IO Errors so remove those values</span>
+                <span class="token keyword">if</span> motion <span class="token operator">==</span> <span class="token number">1</span> <span class="token keyword">and</span> countTray <span class="token keyword">and</span> fsr_status <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
+                    current_time <span class="token operator">=</span> datetime<span class="token punctuation">.</span>now<span class="token punctuation">(</span><span class="token punctuation">)</span>
+                    tray_in <span class="token operator">=</span> db<span class="token punctuation">.</span>fsr_rfid<span class="token punctuation">.</span>tray_in
+                    post_data <span class="token operator">=</span> <span class="token punctuation">{</span>
+                        <span class="token string">'status_count'</span><span class="token punctuation">:</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span>
+                        <span class="token string">'timestamp'</span><span class="token punctuation">:</span> current_time<span class="token punctuation">,</span>
+                    <span class="token punctuation">}</span>
+                    result <span class="token operator">=</span> tray_in<span class="token punctuation">.</span>insert_one<span class="token punctuation">(</span>post_data<span class="token punctuation">)</span>
+                    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;Stack of Trays removed&quot;</span><span class="token punctuation">)</span>
+                    countTray <span class="token operator">=</span> <span class="token boolean">False</span>
+                <span class="token keyword">if</span> motion<span class="token operator">==</span><span class="token number">1</span><span class="token punctuation">:</span>
+                    <span class="token keyword">if</span><span class="token punctuation">(</span>fsr_status <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                        countTray <span class="token operator">=</span> <span class="token boolean">True</span>
+                    <span class="token keyword">print</span> <span class="token punctuation">(</span><span class="token string">'Motion Detected'</span><span class="token punctuation">)</span>
+                <span class="token keyword">if</span><span class="token punctuation">(</span>motion <span class="token operator">==</span> <span class="token number">0</span> <span class="token keyword">and</span> countTray<span class="token punctuation">)</span><span class="token punctuation">:</span>
+                        current_time <span class="token operator">=</span> datetime<span class="token punctuation">.</span>now<span class="token punctuation">(</span><span class="token punctuation">)</span>
+                        tray_in <span class="token operator">=</span> db<span class="token punctuation">.</span>fsr_rfid<span class="token punctuation">.</span>tray_in
+                        post_data <span class="token operator">=</span> <span class="token punctuation">{</span>
+                            <span class="token string">'status_count'</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+                            <span class="token string">'timestamp'</span><span class="token punctuation">:</span> current_time<span class="token punctuation">,</span>
+                        <span class="token punctuation">}</span>
+                        result <span class="token operator">=</span> tray_in<span class="token punctuation">.</span>insert_one<span class="token punctuation">(</span>post_data<span class="token punctuation">)</span>
+                        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&quot;Tray in counted&quot;</span><span class="token punctuation">)</span>
+                        countTray <span class="token operator">=</span> <span class="token boolean">False</span>
+            time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span>
+
+	<span class="token keyword">except</span> IOError<span class="token punctuation">:</span>
+		<span class="token keyword">print</span> <span class="token punctuation">(</span><span class="token string">&quot;Error&quot;</span><span class="token punctuation">)</span>
+    
+</code></pre></div><p>We use <code>grovepi.pinMode()</code> to fix the pin value for motion sensor to retrieve all the motion readings</p> <p>We validate the motion and force data to determine whether there is a tray detected, we check whether it is a tray into the trolley or removal of tray from the trolley so to prevent any double counting.</p></div> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/tray-inout/" class="prev router-link-active">
+        Detecting Tray In/Out
+      </a></span> <!----></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.f43c135a.js" defer></script><script src="/assets/js/2.442eaabe.js" defer></script><script src="/assets/js/13.ff62b263.js" defer></script>
+  </body>
+</html>
