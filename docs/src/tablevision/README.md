@@ -1,10 +1,8 @@
 # How to use Tablevision
 
 ::: tip Hello there!
-Check out our [Github Repository](https://github.com/smu-iot20-g7/tablevision) to see our source codes.
+Check out our [Github Repository](https://github.com/smu-iot20-g7/tablevision) to see our source codes or read our journal [here](../journal/tablevision.md).
 :::
-
-Read our journal [here](../journal/tablevision.md).
 
 # Tablevision
 

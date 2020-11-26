@@ -38,6 +38,14 @@ module.exports = {
             link: '/journal/',
         },
         {
+            text: 'Tray In/Out Docs',
+            link: '/tray-inout/',
+        },
+        {
+            text: 'Tablevision Docs',
+            link: '/tablevision/',
+        },
+        {
             text: 'Our Journey',
             link: '/our_journey/',
         },
@@ -77,9 +85,9 @@ module.exports = {
                     ]
                 }
             ],
-            '/fsr-rfid/': [
+            '/tray-inout/': [
                 {
-                    title: 'FSR-RFID Docs',
+                    title: 'Tray In/Out Docs',
                     collapsable: false,
                     children: [
                         '',
