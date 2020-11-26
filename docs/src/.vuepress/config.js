@@ -91,6 +91,7 @@ module.exports = {
                     collapsable: false,
                     children: [
                         '',
+                        'documentation'
                     ]
                 }
             ],
